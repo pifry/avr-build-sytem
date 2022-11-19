@@ -1,0 +1,15 @@
+FROM debian:stable-slim
+
+WORKDIR /home
+
+# RUN apt-get update && \
+#     apt-get install -y wget && \
+#     cd /opt && \
+#     wget https://ww1.microchip.com/downloads/aemDocuments/documents/DEV/ProductDocuments/SoftwareTools/avr8-gnu-toolchain-3.7.0.1796-linux.any.x86_64.tar.gz && \
+#     tar -xf avr8-gnu-toolchain-3.7.0.1796-linux.any.x86_64.tar.gz && \
+#     rm -r avr8-gnu-toolchain-3.7.0.1796-linux.any.x86_64.tar.gz
+
+RUN apt-get update && \
+    apt-get install -y gcc-avr binutils-avr gdb-avr avr-libc
+
+#ENV PATH="${PATH}:/opt/avr8-gnu-toolchain-linux_x86_64/bin"
